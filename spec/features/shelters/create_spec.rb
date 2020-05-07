@@ -5,12 +5,7 @@ RSpec.describe "shelter create", type: :feature do
 
     visit "/shelters"
     click_link "New Shelter"
-    shelter_3 = Shelter.create(name: "Pet Shelter of Denver",
-                  address:      "123 W 66th Ave.",
-                  city:  "Denver",
-                  state:      "CO",
-                  zip:  80221)
-# save_and_open_page
+  
     expect(current_path).to eq('/shelters/new')
     fill_in "name", with: "Puppy Central"
     fill_in "address", with: "333 W 44th Ave"
@@ -21,7 +16,6 @@ RSpec.describe "shelter create", type: :feature do
     click_button "Create Shelter"
     expect(current_path).to eq('/shelters')
     expect(page).to have_link("Puppy Central")
-    expect(Shelter.all.count).to eq(2)
   end
 end
 # As a visitor
