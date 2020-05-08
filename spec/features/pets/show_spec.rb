@@ -1,13 +1,13 @@
 require 'rails_helper'
 
-RSpec.describe "shelter pets index page", type: :feature do
-  it "can see each Pet that can be adopted from that Shelter" do
+
+RSpec.describe "pet show page", type: :feature do
+  it "can see the pet details" do
     shelter_1 = Shelter.create(name: "Pawsitive Tomorrows",
                          address:      "123 W 66th Ave.",
                          city:  "Denver",
                          state:      "CO",
                          zip:  80221)
-
 
     pet_1 = Pet.create(image: "https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
                        name:      "Randy",
@@ -20,17 +20,29 @@ RSpec.describe "shelter pets index page", type: :feature do
                        sex:      "female",
                        shelter_id: shelter_1.id)
 
-    pet_3 = Pet.create(image: "https://images.unsplash.com/photo-1535930891776-0c2dfb7fda1a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-                       name:      "Larry",
-                       approximate_age:  "9 months",
-                       sex:      "male",
-                       shelter_id: shelter_1.id)
+    visit "/pets/#{pet_1.id}"
 
-    visit "/shelters/#{shelter_1.id}/pets"
+#need test for img
     expect(page).to have_content(pet_1.name)
-    page.find("#pet-avatar-#{pet_1.id}")['src'].should have_content pet_1.image
+    expect(page).to have_content(pet_1.description)
     expect(page).to have_content(pet_1.approximate_age)
-    expect(page).to have_content(pet_1.sex)
-    expect(page).to have_content(pet_2.name)
+    expect(page).to have_content(pet_1.adoption_status)
+    expect(page).not_to have_content(pet_2.name)
+    expect(page).not_to have_content(pet_2.description)
+    expect(page).not_to have_content(pet_2.approximate_age)
+    expect(page).not_to have_content(pet_2.adoption_status)
   end
 end
+# User Story 9, Pet Show
+
+# rails generate migration add_description_and_adoption_status_to_pets description:string adoption_status:string
+#
+# As a visitor
+# When I visit '/pets/:id'
+# Then I see the pet with that id including the pet's:
+# - image
+# - name
+# - description
+# - approximate age
+# - sex
+# - adoptable/pending adoption status
