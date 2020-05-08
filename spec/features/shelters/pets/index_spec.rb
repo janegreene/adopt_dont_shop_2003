@@ -7,7 +7,7 @@ RSpec.describe "shelter pets index page", type: :feature do
                          city:  "Denver",
                          state:      "CO",
                          zip:  80221)
-                         
+
 
     pet_1 = Pet.create(image: "https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
                        name:      "Randy",
@@ -28,7 +28,7 @@ RSpec.describe "shelter pets index page", type: :feature do
 
     visit "/shelters/#{shelter_1.id}/pets"
     expect(page).to have_content(pet_1.name)
-    # page.find("#pet-avatar-#{pet_1.id}")['src'].should have_content pet_1.image
+    page.find("#pet-avatar-#{pet_1.id}")['src'].should have_content pet_1.image
     expect(page).to have_content(pet_1.approximate_age)
     expect(page).to have_content(pet_1.sex)
     expect(page).to have_content(pet_2.name)
