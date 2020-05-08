@@ -13,12 +13,16 @@ RSpec.describe "pet show page", type: :feature do
                        name:      "Randy",
                        approximate_age:  "3 years",
                        sex:      "male",
-                       shelter_id: shelter_1.id)
+                       shelter_id: shelter_1.id,
+                       description: "Randy is a playful pup who likes short walks on long beaches.",
+                      adoption_status: "adoptable")
     pet_2 = Pet.create(image: "https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
                        name:      "Lucy",
                        approximate_age:  "6 months",
                        sex:      "female",
-                       shelter_id: shelter_1.id)
+                       shelter_id: shelter_1.id,
+                       description: "Lucy loves bathtime and reading romance novels aloud.",
+                       adoption_status: "pending")
 
     visit "/pets/#{pet_1.id}"
 
@@ -35,7 +39,7 @@ RSpec.describe "pet show page", type: :feature do
 end
 # User Story 9, Pet Show
 
-# rails generate migration add_description_and_adoption_status_to_pets description:string adoption_status:string
+# rails generate migration AddDetailsToPets description:string adoption_status:string
 #
 # As a visitor
 # When I visit '/pets/:id'
