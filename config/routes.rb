@@ -10,5 +10,7 @@ Rails.application.routes.draw do
     get '/pets', to: 'pets#index'
     get '/pets/:id', to: 'pets#show'
     get '/shelters/:shelter_id/pets', to: 'shelter_pets#index'
+    get '/shelters/:shelter_id/pets/new', to: 'shelter_pets#new'
+    # post '/pets', to: 'pets#create'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
