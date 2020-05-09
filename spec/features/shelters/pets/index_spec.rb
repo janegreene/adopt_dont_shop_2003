@@ -25,7 +25,7 @@ RSpec.describe "shelter pets index page", type: :feature do
                        approximate_age:  "9 months",
                        sex:      "male",
                        shelter_id: shelter_1.id)
-
+# require "pry"; binding.pry
     visit "/shelters/#{shelter_1.id}/pets"
     expect(page).to have_content(pet_1.name)
     page.find("#pet-avatar-#{pet_1.id}")['src'].should have_content pet_1.image

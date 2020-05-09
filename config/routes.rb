@@ -9,9 +9,9 @@ Rails.application.routes.draw do
     delete '/shelters/:id', to: 'shelters#delete'
     get '/pets', to: 'pets#index'
     get '/pets/:id', to: 'pets#show'
-    get '/shelters/:shelter_id/pets', to: 'shelter_pets#index'
-    get '/shelters/:shelter_id/pets/new', to: 'shelter_pets#new'
-    post '/shelters/:shelter_id/pets', to: 'shelter_pets#create'
+    get '/shelters/:id/pets', to: 'shelter_pets#index'
+    get '/shelters/:id/pets/new', to: 'shelter_pets#new'
+    post '/shelters/:id/pets', to: 'shelter_pets#create'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

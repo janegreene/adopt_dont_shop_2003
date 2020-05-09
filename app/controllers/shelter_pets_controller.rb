@@ -1,14 +1,23 @@
 class ShelterPetsController < ApplicationController
   def index
-    shelter_to_find = Shelter.find(params[:shelter_id])
-    @pets = shelter_to_find.pets
+    @shelter = Shelter.find(params[:id])
+    @pets = @shelter.pets
+  end
+
+  def new
+    @shelter = Shelter.find(params[:id])
   end
 
   def create
-    Pet.create(:image => params[:image],:name => params[:name], :description => params[:description],
-                    :approximate_age => params[:approximate_age], :sex => params[:sex],
-                    :adoption_status => params[:adoption_status])
+    shelter = Shelter.find(params[:id])
+    pet = shelter.pets.create!(pet_params)
 
-    redirect_to "/shelters/:shelter_id/pets"
+    redirect_to "/shelters/#{shelter.id}/pets"
+  end
+
+  private
+
+  def pet_params
+    params.permit(:image, :name, :description, :approximate_age, :sex, :adoption_status)
   end
 end
