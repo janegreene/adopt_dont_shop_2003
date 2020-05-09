@@ -2,6 +2,7 @@
 <% @pets.each do |pet| %>
 <%= image_tag pet.image, id: "pet-avatar-#{pet.id}"%>
 <h2> <%= pet.name %> </h2>
+<h2> <%= pet.description %> </h2>
 <h2><%= pet.approximate_age %></h2>
 <h2><%= pet.sex %></h2>
 <h2><%= pet.adoption_status %></h2>
