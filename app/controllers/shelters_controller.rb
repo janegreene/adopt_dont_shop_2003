@@ -11,13 +11,6 @@ class SheltersController < ApplicationController
   end
 
   def create
-    # @shelter = Shelter.new
-    # @shelter.name = params[:name]
-    # @shelter.address = params[:address]
-    # @shelter.city = params[:city]
-    # @shelter.state = params[:state]
-    # @shelter.zip = params[:zip]
-    # @shelter.save
     Shelter.create(:name => params[:name], :address => params[:address],
                     :city => params[:city], :state => params[:state],
                     :zip => params[:zip])

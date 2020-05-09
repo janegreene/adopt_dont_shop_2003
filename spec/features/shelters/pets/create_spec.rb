@@ -10,7 +10,7 @@ RSpec.describe "shelter pet create", type: :feature do
 
     visit "/shelters/#{shelter_1.id}/pets"
     click_link "Create Pet"
-    # save_and_open_page
+    
     expect(current_path).to eq("/shelters/#{shelter_1.id}/pets/new")
     fill_in "image", with: "https://images.unsplash.com/flagged/photo-1579089076211-7ef93768be59?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
     fill_in "name", with: "Todd"
