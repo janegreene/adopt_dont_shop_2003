@@ -57,19 +57,23 @@ RSpec.describe "shelter index page", type: :feature do
     expect(page).not_to have_content(shelter_2.name)
 
   end
-end
-# User Story 14, Shelter Delete From Shelter Index Page
-#
-# As a visitor
-# When I visit the shelter index page
-# Next to every shelter, I see a link to delete that shelter
-# When I click the link
-# I am returned to the Shelter Index Page where I no longer see that shelter
 
-# User Story 13, Shelter Update From Shelter Index Page
+
+end
+
+
+# # User Story 14, Shelter Delete From Shelter Index Page
+# #
+# # As a visitor
+# # When I visit the shelter index page
+# # Next to every shelter, I see a link to delete that shelter
+# # When I click the link
+# # I am returned to the Shelter Index Page where I no longer see that shelter
 #
-# As a visitor
-# When I visit the shelter index page
-# Next to every shelter, I see a link to edit that shelter's info
+# # User Story 13, Shelter Update From Shelter Index Page
+# #
+# # As a visitor
+# # When I visit the shelter index page
+# # Next to every shelter, I see a link to edit that shelter's info
 # When I click the link
 # I should be taken to that shelters edit page where I can update its information just like in User Story 5
