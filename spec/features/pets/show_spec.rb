@@ -37,16 +37,3 @@ RSpec.describe "pet show page", type: :feature do
     expect(page).not_to have_content(pet_2.adoption_status)
   end
 end
-# User Story 9, Pet Show
-
-# rails generate migration AddDetailsToPets description:string adoption_status:string
-#
-# As a visitor
-# When I visit '/pets/:id'
-# Then I see the pet with that id including the pet's:
-# - image
-# - name
-# - description
-# - approximate age
-# - sex
-# - adoptable/pending adoption status
