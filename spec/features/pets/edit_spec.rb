@@ -13,7 +13,6 @@ RSpec.describe "update pet", type: :feature do
                        approximate_age:  "3 years",
                        sex:      "male",
                        shelter_id: shelter_1.id)
-                       #do I need adoption_status or will it default with create in test too
 
 
     visit "/pets/#{pet_1.id}"
@@ -33,20 +32,3 @@ RSpec.describe "update pet", type: :feature do
     expect(page).to_not have_content("Bruce")
   end
 end
-
-# User Story 11, Pet Update
-#
-# As a visitor
-# When I visit a Pet Show page
-# Then I see a link to update that Pet "Update Pet"
-# When I click the link
-# I am taken to '/pets/:id/edit' where I see a form to edit the pet's data including:
-# - image
-# - name
-# - description
-# - approximate age
-# - sex
-# When I click the button to submit the form "Update Pet"
-# Then a `PATCH` request is sent to '/pets/:id',
-# the pet's data is updated,
-# and I am redirected to the Pet Show page where I see the Pet's updated information
