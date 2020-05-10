@@ -13,3 +13,77 @@
  *= require_tree .
  *= require_self
  */
+
+ img {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  margin: 10px;
+  padding: 10px;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 40px;
+  padding: 40px;
+  left: 0;
+  top: 0;
+  font-size: 100%;
+  background-color: #B9BDD0;
+  color: blue;
+}
+.main {
+  background-color: #E3E8FF;
+}
+header {
+  background-color: #4A68FF;
+  color: blue;
+  width: 100%;
+  margin: 40px;
+  padding: 40px;
+}
+
+/* ROOT FONT STYLES */
+
+* {
+  font-family: 'Lato', Helvetica, sans-serif;
+  color: #333447;
+  line-height: 1.5;
+}
+
+/* TYPOGRAPHY */
+
+h1 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 2.2rem;
+  margin: 10px;
+  padding: 10px;
+
+}
+
+h2 {
+  font-size: 1.6rem;
+}
+
+h3 {
+  font-size: 1.375rem;
+}
+
+h4 {
+  font-size: 1.125rem;
+}
+
+h5 {
+  font-size: 1rem;
+}
+
+h6 {
+  font-size: 0.875rem;
+}
+
+p {
+  font-size: 1.125rem;
+  font-weight: 200;
+  line-height: 1.8;
+}

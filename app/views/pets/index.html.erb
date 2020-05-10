@@ -7,6 +7,7 @@
 <h1>All Pets</h1>
 
 <% @pets.each do |pet| %>
+
   <%= image_tag pet.image, id: "pet-avatar-#{pet.id}"%>
   <h2><%= link_to "#{pet.name}", "/pets/#{pet.id}" %></h2>
 
