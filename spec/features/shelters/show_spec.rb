@@ -26,4 +26,29 @@ RSpec.describe "shelter show page", type: :feature do
     expect(page).not_to have_content(shelter_2.city)
     expect(page).not_to have_content(shelter_2.zip)
   end
+
+  it "has a link to pet index" do
+    shelter_2 = Shelter.create(name: "Denver Animal Shelter",
+                         address:       "4123 W 86th Pl.",
+                         city:  "Denver",
+                         state:      "CO",
+                         zip:  82126)
+
+    visit "/shelters/#{shelter_2.id}"
+    click_link "All Pets"
+
+    expect(current_path).to eq("/pets")
+  end
+  it "has a link to shelter index" do
+    shelter_2 = Shelter.create(name: "Denver Animal Shelter",
+                         address:       "4123 W 86th Pl.",
+                         city:  "Denver",
+                         state:      "CO",
+                         zip:  82126)
+
+    visit "/shelters/#{shelter_2.id}"
+    click_link "All Shelters"
+
+    expect(current_path).to eq("/shelters")
+  end
 end

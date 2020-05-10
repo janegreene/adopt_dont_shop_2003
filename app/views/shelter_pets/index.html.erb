@@ -1,3 +1,9 @@
+<nav>
+<ul>
+    <li><a href="/pets">All Pets</a></li>
+    <li><a href="/shelters">All Shelters</a></li>
+</ul>
+</nav>
 <h1>All Pets at Shelter</h1>
 <% @pets.each do |pet| %>
 <%= image_tag pet.image, id: "pet-avatar-#{pet.id}"%>

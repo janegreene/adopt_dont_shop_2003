@@ -1,3 +1,9 @@
+<nav>
+<ul>
+    <li><a href="/pets">All Pets</a></li>
+    <li><a href="/shelters">All Shelters</a></li>
+</ul>
+</nav>
 <h1>Update a Shelter</h1>
 <%= form_tag "/shelters/#{@shelter.id}", method: :patch do %>
   <%= label_tag :name %>
