@@ -1,14 +1,18 @@
-<nav>
+<header>
+  <h1> Adopt Don't Shop </h1>
 <ul>
-    <li><a href="/pets">All Pets</a></li>
-    <li><a href="/shelters">All Shelters</a></li>
+    <li><a class="big_link" href="/pets">All Pets</a></li>
+    <li><a class="big_link" href="/shelters">All Shelters</a></li>
 </ul>
-</nav>
+</header>
+<div class="main">
 <h1>All Shelters</h1>
 
 <% @shelters.each do |shelter| %>
   <h2><%= link_to "#{shelter.name}", "/shelters/#{shelter.id}" %></h2>
-  <h2><%= link_to "Edit #{shelter.name}", "/shelters/#{shelter.id}/edit"%></h2>
-  <h2><%= link_to "Delete #{shelter.name}", "/shelters/#{shelter.id}/delete"%></h2>
+  <h3><%= link_to "Edit #{shelter.name}", "/shelters/#{shelter.id}/edit"%></h3>
+  <h3><%= link_to "Delete #{shelter.name}", "/shelters/#{shelter.id}/delete"%></h3>
 <% end %>
-<a href="/shelters/new">New Shelter</a>
+<footer>
+<a class="big_link" href="/shelters/new">New Shelter</a>
+</footer>

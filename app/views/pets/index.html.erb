@@ -1,9 +1,11 @@
-<nav>
+<header>
+  <h1> Adopt Don't Shop </h1>
 <ul>
-    <li><a href="/pets">All Pets</a></li>
-    <li><a href="/shelters">All Shelters</a></li>
+    <li><a class="big_link" href="/pets">All Pets</a></li>
+    <li><a class="big_link" href="/shelters">All Shelters</a></li>
 </ul>
-</nav>
+</header>
+<div class="main">
 <h1>All Pets</h1>
 
 <% @pets.each do |pet| %>
@@ -14,6 +16,7 @@
   <h2><%= pet.approximate_age %></h2>
   <h2><%= pet.sex %></h2>
   <h2><%= pet.shelter.name %></h2>
-  <h2><%= link_to "Edit #{pet.name}", "/pets/#{pet.id}/edit"%></h2>
-  <h2><%= link_to "Delete #{pet.name}", "/pets/#{pet.id}/delete"%></h2>
+  <h3><%= link_to "Edit #{pet.name}", "/pets/#{pet.id}/edit"%></h3>
+  <h3><%= link_to "Delete #{pet.name}", "/pets/#{pet.id}/delete"%></h3>
 <% end %>
+</div>
