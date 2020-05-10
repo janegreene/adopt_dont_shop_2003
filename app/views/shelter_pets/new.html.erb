@@ -1,3 +1,10 @@
+<nav>
+<ul>
+    <li><a href="/pets">All Pets</a></li>
+    <li><a href="/shelters">All Shelters</a></li>
+</ul>
+</nav>
+
 <h1>Create a New Shelter Pet</h1>
 <%= form_tag "/shelters/#{@shelter.id}/pets" do %>
     <%= label_tag :image %>
