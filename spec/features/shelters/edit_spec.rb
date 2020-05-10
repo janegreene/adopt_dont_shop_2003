@@ -19,28 +19,8 @@ RSpec.describe "update shelter", type: :feature do
     fill_in "city", with: "Denver"
     fill_in "state", with: "OK"
     fill_in "zip", with: 80221
-# save_and_open_page
     click_button "submit"
 
-    # expect(current_path).to eq("/shelters/#{shelter.id}")
     expect(page).to have_content("Pet Shelter of Denver")
   end
 end
-
-# User Story 5, Shelter Update
-#
-# As a visitor
-# When I visit a shelter show page
-# Then I see a link to update the shelter "Update Shelter"
-# When I click the link "Update Shelter"
-# Then I am taken to '/shelters/:id/edit' where I  see a form to edit the shelter's data including:
-# - name
-# - address
-# - city
-# - state
-# - zip
-# When I fill out the form with updated information
-# And I click the button to submit the form
-# Then a `PATCH` request is sent to '/shelters/:id',
-# the shelter's info is updated,
-# and I am redirected to the Shelter's Show page where I see the shelter's updated info
