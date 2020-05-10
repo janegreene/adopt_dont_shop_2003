@@ -1,11 +1,11 @@
-<nav>
+<header>
 <ul>
-    <li><a href="/pets">All Pets</a></li>
-    <li><a href="/shelters">All Shelters</a></li>
+    <li><a class="big_link" href="/pets">All Pets</a></li>
+    <li><a class="big_link" href="/shelters">All Shelters</a></li>
 </ul>
-</nav>
-
-<h1>Edit a Pet</h1>
+</header>
+<div class="main">
+<h1>Edit Pet</h1>
 <%= form_tag "/pets/#{@pet_id}/edit" do %>
     <%= label_tag :image %>
     <%= text_field_tag :image %><br/>
@@ -20,3 +20,4 @@
     <%= hidden_field_tag :adoption_status, 'adoptable' %>
   <%= submit_tag 'Update Pet' %>
 <% end %>
+</div>
