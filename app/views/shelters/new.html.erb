@@ -1,9 +1,11 @@
-<nav>
+<header>
+  <h1> Adopt Don't Shop </h1>
 <ul>
-    <li><a href="/pets">All Pets</a></li>
-    <li><a href="/shelters">All Shelters</a></li>
+    <li><a class="big_link" href="/pets">All Pets</a></li>
+    <li><a class="big_link" href="/shelters">All Shelters</a></li>
 </ul>
-</nav>
+</header>
+<div class="main">
 <h1>Create a New Shelter</h1>
 <%= form_tag '/shelters' do %>
     <%= label_tag :name %>
@@ -18,3 +20,4 @@
     <%= text_field_tag :zip %><br/>
   <%= submit_tag 'Create Shelter' %>
 <% end %>
+</div>
