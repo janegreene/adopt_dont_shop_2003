@@ -1,11 +1,11 @@
 <header>
 <ul>
-    <li><a href="/pets">All Pets</a></li>
-    <li><a href="/shelters">All Shelters</a></li>
+    <li><a class="big_link" href="/pets">All Pets</a></li>
+    <li><a class="big_link" href="/shelters">All Shelters</a></li>
 </ul>
 </header>
 <div class="main">
-<h1>All Pets at Shelter</h1>
+<h1>All Pets at the Shelter</h1>
 <% @pets.each do |pet| %>
 <%= image_tag pet.image, id: "pet-avatar-#{pet.id}"%>
 <h2> <%= pet.name %> </h2>
@@ -13,8 +13,10 @@
 <h2><%= pet.approximate_age %></h2>
 <h2><%= pet.sex %></h2>
 <h2><%= pet.adoption_status %></h2>
-<h2><%= link_to "Edit #{pet.name}", "/pets/#{pet.id}/edit"%></h2>
-<h2><%= link_to "Delete #{pet.name}", "/pets/#{pet.id}/delete"%></h2>
+<h3><%= link_to "Edit #{pet.name}", "/pets/#{pet.id}/edit"%></h3>
+<h3><%= link_to "Delete #{pet.name}", "/pets/#{pet.id}/delete"%></h3>
 <% end %>
 </div>
-<a href= "/shelters/<%=@shelter.id%>/pets/new">Create Pet</a>
+<footer>
+<a class="big_link" href= "/shelters/<%=@shelter.id%>/pets/new">Create Pet</a>
+</footer>

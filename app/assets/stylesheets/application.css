@@ -43,6 +43,22 @@ header {
   margin: 40px;
   padding: 40px;
 }
+footer {
+  background-color: #4A68FF;
+  color: blue;
+  width: 100%;
+  margin: 40px;
+  padding: 40px;
+}
+.big_link {
+  background-color: #717480;
+  font-family: 'Lato', Helvetica, sans-serif;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.6rem;
+  margin: 10px;
+  padding: 10px;
+}
 
 /* ROOT FONT STYLES */
 
@@ -56,7 +72,7 @@ header {
 
 h1 {
   font-family: "Times New Roman", Times, serif;
-  font-size: 2.2rem;
+  font-size: 2.5rem;
   margin: 10px;
   padding: 10px;
 
@@ -64,10 +80,12 @@ h1 {
 
 h2 {
   font-size: 1.6rem;
+  margin: 10px;
 }
 
 h3 {
   font-size: 1.375rem;
+  margin: 10px;
 }
 
 h4 {
